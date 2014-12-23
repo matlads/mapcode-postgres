@@ -6,7 +6,7 @@ EXTVERSION = $(shell grep -m 1 '[[:space:]]\{8\}"version":' META.json | \
 DATA       = $(wildcard sql/*sql)
 DOCS       = $(wildcard doc/*.$(EXTENSION))
 MODULE_big = $(EXTENSION)
-OBJS       = src/mapcoder/mapcoder.o src/funcs.o
+OBJS       = src/mapcoder-cpp/mapcodelib/mapcoder.o src/funcs.o
 PG_CONFIG ?= pg_config
 PG91 = $(shell $(PG_CONFIG) --version | grep -qE " 8\.| 9\.0" && echo no || echo yes)
 
