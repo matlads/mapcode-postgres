@@ -1,0 +1,41 @@
+{
+    "name": "mapcode",
+    "abstract": "mapcodelib functions",
+    "description": "",
+    "version": "0.0.1",
+    "maintainer": [
+        "Martin Atukunda <martin@afriadd.com>"
+    ],
+    "license": "postgresql",
+    "prereqs": {
+        "runtime": {
+            "requires": {
+                "PostgreSQL": "8.4.0"
+            }
+        },
+        "test": {
+            "requires": {
+                "plpgsql": 0
+            }
+        }
+    },
+    "resources": {
+        "bugtracker": {
+            "web": "http://github.com/matlads/mapcode-postgres/issues/"
+        },
+        "repository": {
+            "url": "git://github.com/matlads/mapcode-postgres",
+            "web": "http://github.com/matlads/matpcode-postgres/",
+            "type": "git"
+        }
+    },
+    "generated_by": "Martin Atukunda",
+    "meta-spec": {
+        "version": "1.0.0",
+        "url": "http://pgxn.org/meta/spec.txt"
+    },
+    "tags": [
+        "mapcode",
+        "mapcodes"
+    ]
+}
