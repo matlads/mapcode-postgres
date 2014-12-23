@@ -4,7 +4,12 @@ mapcode-postgres
 This postgresql extension contains functions from mapcodelib, a C library for
 using [mapcodes](http://www.mapcode.com).
 
-To build mapcode, just do this:
+To build mapcode, just clone this repository with the --recursive option
+like this:
+
+    git clone --recursive https://github.com/matlads/mapcode-postgres.git
+
+After cloning this repository then do this:
 
     make
     make install
