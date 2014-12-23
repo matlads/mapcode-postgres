@@ -70,7 +70,7 @@ Datum mc2coord_cstring_cstring(PG_FUNCTION_ARGS);
 Datum mc2coord_cstring_cstring(PG_FUNCTION_ARGS)
 {
     const char *mapcode = PG_GETARG_CSTRING(0);
-    const char *ccode = PG_GETARG_CSTRING(0);
+    const char *ccode = PG_GETARG_CSTRING(1);
     char geom[128] = "";
 
     int territoryCode = convertTerritoryIsoNameToCode(ccode, 0);
@@ -84,7 +84,6 @@ Datum mc2coord_cstring_cstring(PG_FUNCTION_ARGS)
         PG_RETURN_NULL();
 
     sprintf(geom, "%lf,%lf%c", lat, lon, '\0');
-    fprintf(stderr, "mapcode: mc2coord_cstring_cstring: geom = %s\n", geom);
 
     length = strlen(geom);
     t = (text *) palloc(VARHDRSZ + length);
