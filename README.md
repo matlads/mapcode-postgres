@@ -1,5 +1,5 @@
-mapcode
-=======
+mapcode-postgres
+================
 
 This postgresql extension contains functions from mapcodelib, a C library for
 using [mapcodes](http://www.mapcode.com).
