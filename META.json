@@ -19,6 +19,14 @@
             }
         }
     },
+    "provides": {
+        "mapcode": {
+            "abstract": "Mapcodes functions in the Database",
+            "file": "sql/mapcode.sql",
+            "docfile": "doc/README.md",
+            "version": "1.40"
+        }
+    },
     "resources": {
         "bugtracker": {
             "web": "http://github.com/matlads/mapcode-postgres/issues/"
@@ -36,6 +44,11 @@
     },
     "tags": [
         "mapcode",
-        "mapcodes"
+        "mapcodes",
+        "location",
+        "map code",
+        "longitude",
+        "latitude",
+        "geospatial",
     ]
 }
