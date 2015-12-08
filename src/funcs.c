@@ -19,6 +19,7 @@ Datum coord2mc_float_float_cstring(PG_FUNCTION_ARGS)
     double lat = PG_GETARG_FLOAT8(0);
     double lng = PG_GETARG_FLOAT8(1);
     const char *ccode = PG_GETARG_CSTRING(2);
+    int i = 0;
 
     text *t = NULL;
     char *results[MAX_NR_OF_MAPCODE_RESULTS];
@@ -44,7 +45,7 @@ Datum coord2mc_float_float_cstring(PG_FUNCTION_ARGS)
         PG_RETURN_NULL();
     }
 
-    for (int i = 0; i < nrResults; ++i) {
+    for (i = 0; i < nrResults; ++i) {
         const char* foundMapcode = results[(i * 2)];
         const char* foundTerritory = results[(i *2) + 1];
 
