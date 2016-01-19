@@ -4,16 +4,23 @@ mapcode-postgres
 This postgresql extension contains functions from mapcodelib, a C library for
 using [mapcodes](http://www.mapcode.com).
 
-To build mapcode, just clone this repository with the --recursive option
+Getting mapcode-postgres
+========================
+
+To get mapcode-postgres, just clone this repository with the --recursive option
 like this:
 
     git clone --recursive https://github.com/matlads/mapcode-postgres.git
 
-After cloning this repository then do this:
+Building mapcode-postgres
+=========================
+
+To build mapcode, just do this:
 
     make
     make install
     make installcheck
+
 
 If you encounter an error such as:
 
@@ -70,13 +77,14 @@ schema, like so:
 
 Dependencies
 ------------
-The `mapcode` extension has no dependencies other than PostgreSQL, and GCC. It
-requires a C compiler to compile it.
+The `mapcode` extension has no dependencies other than
+[mapcodelib](https://github.com/mapcode-foundation/mapcode-cpp), PostgreSQL,
+and GCC. It requires a C compiler to compile it.
 
 Copyright and License
 ---------------------
 
-Copyright (c) 2014 Martin Atukunda and Afriadd Company
+Copyright (c) 2014-2016 Martin Atukunda and Afriadd Company
 
 This module is free software; you can redistribute it and/or modify it under
 the [PostgreSQL License](http://www.opensource.org/licenses/postgresql).

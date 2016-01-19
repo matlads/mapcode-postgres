@@ -2,7 +2,7 @@
     "name": "mapcode",
     "abstract": "mapcodelib functions",
     "description": "",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "maintainer": [
         "Martin Atukunda <martin@afriadd.com>"
     ],
@@ -17,6 +17,14 @@
             "requires": {
                 "plpgsql": 0
             }
+        }
+    },
+    "provides": {
+        "mapcode": {
+            "abstract": "Mapcodes functions in the Database",
+            "file": "sql/mapcode.sql",
+            "docfile": "doc/README.md",
+            "version": "1.40"
         }
     },
     "resources": {
@@ -36,6 +44,11 @@
     },
     "tags": [
         "mapcode",
-        "mapcodes"
+        "mapcodes",
+        "location",
+        "map code",
+        "longitude",
+        "latitude",
+        "geospatial",
     ]
 }
