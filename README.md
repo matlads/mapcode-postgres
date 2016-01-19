@@ -70,13 +70,14 @@ schema, like so:
 
 Dependencies
 ------------
-The `mapcode` extension has no dependencies other than PostgreSQL, and GCC. It
-requires a C compiler to compile it.
+The `mapcode` extension has no dependencies other than
+[mapcodelib](https://github.com/mapcode-foundation/mapcode-cpp), PostgreSQL,
+and GCC. It requires a C compiler to compile it.
 
 Copyright and License
 ---------------------
 
-Copyright (c) 2014 Martin Atukunda and Afriadd Company
+Copyright (c) 2014-2016 Martin Atukunda and Afriadd Company
 
 This module is free software; you can redistribute it and/or modify it under
 the [PostgreSQL License](http://www.opensource.org/licenses/postgresql).
