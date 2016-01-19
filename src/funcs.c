@@ -2,7 +2,7 @@
 #include <string.h>
 #include "fmgr.h"
 
-#include "mapcoder/mapcoder.h"
+#include "mapcoder-cpp/mapcodelib/mapcoder.h"
 
 #ifdef PG_MODULE_MAGIC
 PG_MODULE_MAGIC;
