@@ -6,13 +6,14 @@ using [mapcodes](http://www.mapcode.com).
 
 After cloning this repository, you need to get the mapcode-cpp repo as well:
 
-   git submodule update --init --recursive
+    git submodule update --init --recursive
 
 To build mapcode, just do this:
 
     make
     make install
     make installcheck
+
 
 If you encounter an error such as:
 
