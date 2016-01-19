@@ -1,4 +1,12 @@
 \set ECHO 0
-1..1
-o1 1 - UGA N7.FR, UGA JC.NGP, UGA CYD.Z8F, UGA KP43.7KG
-ok 1 - UGA KP43.7KG should be 0.341637 32.593781
+unrecognized value "0" for "ECHO"; assuming "none"
+              encodelatlontomapcodes              
+--------------------------------------------------
+ UGA N7.FR, UGA JC.NGP, UGA CYD.Z8F, UGA KP43.7KG
+(1 row)
+
+ decodemapcodetolatlon 
+-----------------------
+ 
+(1 row)
+

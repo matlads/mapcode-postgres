@@ -3,7 +3,7 @@ EXTVERSION   = $(shell grep -m 1 '"version":' META.json | \
                sed -e 's/[[:space:]]*"version":[[:space:]]*"\([^"]*\)",/\1/')
 DATA         = $(filter-out $(wildcard sql/*--*.sql),$(wildcard sql/*.sql))
 TESTS        = $(wildcard test/sql/*.sql)
-REGRESS      = $(patsubt test/sql/%.sql,%,$(TESTS))
+REGRESS      = $(patsubst test/sql/%.sql,%,$(TESTS))
 REGRESS_OPTS = --inputdir=test --load-language=plpgsql
 DOCS         = $(wildcard doc/*md)
 MODULE_big   = $(EXTENSION)
