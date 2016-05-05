@@ -1,5 +1,5 @@
 # mapcode extension
 comment = 'Mapcodes (mapcode.com) in the database'
-default_version = '0.0.1'
+default_version = '0.0.2'
 module_pathname = '$libdir/mapcode'
 relocatable = true
