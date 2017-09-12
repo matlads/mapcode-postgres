@@ -2,7 +2,7 @@
     "name": "mapcode",
     "abstract": "mapcodelib functions",
     "description": "Mapcode extension for PostgreSQL",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "maintainer": [
         "Martin Atukunda <martin@afriadd.com>"
     ],
