@@ -1,12 +1,19 @@
-\set ECHO 0
-unrecognized value "0" for "ECHO"; assuming "none"
-              encodelatlontomapcodes              
---------------------------------------------------
- UGA N7.FR, UGA JC.NGP, UGA CYD.Z8F, UGA KP43.7KG
+CREATE EXTENSION mapcode;
+SELECT mapcode_version();
+ mapcode_version 
+-----------------
+ 2.5.3
 (1 row)
 
- decodemapcodetolatlon 
------------------------
- 
+SELECT mapcode_encode(0.341637, 32.593781, 'UGA');
+ mapcode_encode 
+----------------
+ UGA N7.FR
+(1 row)
+
+SELECT mapcode_decode('N7.FR', 'UGA');
+   mapcode_decode   
+--------------------
+ 0.341600,32.593770
 (1 row)
 

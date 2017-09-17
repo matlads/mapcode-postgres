@@ -1,7 +1,7 @@
-\set ECHO 0
-
 CREATE EXTENSION mapcode;
 
-SELECT encodeLatLonToMapcodes(0.341637, 32.593781, 'UGA');
+SELECT mapcode_version();
 
-SELECT decodeMapcodeToLatLon('KP43.7KG', 'UGA');
+SELECT mapcode_encode(0.341637, 32.593781, 'UGA');
+
+SELECT mapcode_decode('N7.FR', 'UGA');

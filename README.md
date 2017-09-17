@@ -4,6 +4,8 @@ mapcode
 This postgresql extension contains functions from mapcodelib, a C library for
 using [mapcodes](http://www.mapcode.com).
 
+see the Using section below for the exact functionality exported.
+
 Build Dependencies
 ==================
 
@@ -78,6 +80,17 @@ Dependencies
 The `mapcode` extension has no dependencies other than
 [mapcodelib](https://github.com/mapcode-foundation/mapcode-cpp), PostgreSQL,
 and GCC. It requires a C compiler to compile it.
+
+
+Using
+-----
+
+The `mapcode` extension provides the following functions:
+
+* mapcode_version()
+* mapcode_encode(float8, float8, country_code)
+* mapcode_decode(mapcode, territory)
+
 
 Copyright and License
 ---------------------
