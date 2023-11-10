@@ -53,6 +53,18 @@
 #include "internal_territory_names_tr.h"
 #include "internal_territory_names_uk.h"
 
+// The constants are also exported as variables, to allow other languages to use them.
+char *_MAPCODE_C_VERSION                  = MAPCODE_C_VERSION;
+int _MAX_NR_OF_MAPCODE_RESULTS            = MAX_NR_OF_MAPCODE_RESULTS;
+int _MAX_PRECISION_DIGITS                 = MAX_PRECISION_DIGITS;
+int _MAX_PROPER_MAPCODE_ASCII_LEN         = MAX_PROPER_MAPCODE_ASCII_LEN;
+int _MAX_ISOCODE_ASCII_LEN                = MAX_ISOCODE_ASCII_LEN;
+int _MAX_CLEAN_MAPCODE_ASCII_LEN          = MAX_CLEAN_MAPCODE_ASCII_LEN;
+int _MAX_MAPCODE_RESULT_ASCII_LEN         = MAX_MAPCODE_RESULT_ASCII_LEN;
+int _MAX_TERRITORY_FULLNAME_UTF8_LEN      = MAX_TERRITORY_FULLNAME_UTF8_LEN;
+int _MAX_MAPCODE_RESULT_UTF8_LEN          = MAX_MAPCODE_RESULT_UTF8_LEN;
+int _MAX_MAPCODE_RESULT_UTF16_LEN         = MAX_MAPCODE_RESULT_UTF16_LEN;
+int _MAX_ALPHABETS_PER_TERRITORY          = MAX_ALPHABETS_PER_TERRITORY;
 
 #ifdef DEBUG
 
@@ -2037,7 +2049,7 @@ static const int STATE_MACHINE[27][6] = {
                                                                                                                 STATE_GO |
                                                                                                                 512, ERR_UNEXPECTED_HYPHEN},
 
-        //13 prefix.LLLLL === 
+        //13 prefix.LLLLL ===
         {22 |
          128,                          ERR_UNEXPECTED_DOT, ERR_INVALID_MAPCODE_FORMAT, ERR_INVALID_VOWEL,       STATE_GO |
                                                                                                                 128, 11 |
@@ -2047,7 +2059,7 @@ static const int STATE_MACHINE[27][6] = {
         {ERR_BAD_TERRITORY_FORMAT,     ERR_UNEXPECTED_DOT, 15,                         15,                              ERR_BAD_TERRITORY_FORMAT, ERR_UNEXPECTED_HYPHEN},
         //15 TC-S === get 2nd state letter
         {ERR_BAD_TERRITORY_FORMAT,     ERR_UNEXPECTED_DOT, 16,                         16,                              ERR_BAD_TERRITORY_FORMAT, ERR_UNEXPECTED_HYPHEN},
-        //16 TC-SS === white:waitprefix | det/vow:TC-SSS 
+        //16 TC-SS === white:waitprefix | det/vow:TC-SSS
         {18 |
          64,                           ERR_UNEXPECTED_DOT, 17,                         17,                              ERR_DOT_MISSING,          ERR_UNEXPECTED_HYPHEN},
         //17 TC-SSS === white:waitprefix
@@ -2159,7 +2171,7 @@ static enum MapcodeError parseMapcodeString(MapcodeElements *mapcodeElements, co
                 cx = getRomanVersionOf((UWORD) w);
             }
             c = decodeChar(cx);
-            if (c < 0) { // vowel or illegal?                
+            if (c < 0) { // vowel or illegal?
                 if (c == -1) { // illegal?
                     return ERR_INVALID_CHARACTER;
                 }
@@ -3050,6 +3062,21 @@ encodeLatLonToSingleMapcode(char *mapcode, double latDeg, double lonDeg, enum Te
     // prefix territory unless international
     strcpy(mapcode, rlocal.mapcode[0]);
     return 1;
+}
+
+
+// PUBLIC - encode lat,lon for territory to a selected mapcode (from all results) with extraDigits accuracy
+int
+encodeLatLonToSelectedMapcode(char *mapcode, double latDeg, double lonDeg, enum Territory territory, int extraDigits, int indexOfSelected) {
+    Mapcodes mapcodes;
+    int nrOfResults = 0;
+    nrOfResults = encodeLatLonToMapcodes(&mapcodes, latDeg, lonDeg, territory, extraDigits);
+    ASSERT(nrOfResults == mapcodes.count);
+    if ((nrOfResults <= 0) || (indexOfSelected < 0) || (indexOfSelected > nrOfResults)) {
+        return 0;
+    }
+    strcpy(mapcode, mapcodes.mapcode[indexOfSelected]);
+    return nrOfResults;
 }
 
 
