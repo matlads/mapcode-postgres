@@ -4,7 +4,7 @@ EXTVERSION   = $(shell grep -m 1 '"version":' META.json | \
 DATA         = $(filter-out $(wildcard sql/*--*.sql),$(wildcard sql/*.sql))
 TESTS        = $(wildcard test/sql/*.sql)
 REGRESS      = $(patsubst test/sql/%.sql,%,$(TESTS))
-REGRESS_OPTS = --inputdir=test --load-language=plpgsql
+REGRESS_OPTS = --inputdir=test
 DOCS         = $(wildcard doc/*md)
 MODULE_big   = $(EXTENSION)
 OBJS         = src/mapcode-cpp/mapcodelib/mapcoder.o src/funcs.o

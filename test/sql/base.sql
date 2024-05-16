@@ -1,6 +1,4 @@
-CREATE EXTENSION mapcode;
-
-SELECT mapcode_version();
+CREATE EXTENSION "mapcode";
 
 SELECT mapcode_encode(0.341637, 32.593781, 'UGA');
 
