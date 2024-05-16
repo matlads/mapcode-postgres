@@ -1,12 +1,9 @@
-\set ECHO 0
-unrecognized value "0" for "ECHO"; assuming "none"
-              encodelatlontomapcodes              
+              encodelatlontomapcodes
 --------------------------------------------------
  UGA N7.FR, UGA JC.NGP, UGA CYD.Z8F, UGA KP43.7KG
 (1 row)
 
- decodemapcodetolatlon 
+ decodemapcodetolatlon
 -----------------------
- 
+  0.341637,32.593781
 (1 row)
-
