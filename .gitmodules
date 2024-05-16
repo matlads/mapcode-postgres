@@ -1,0 +1,3 @@
+[submodule "src/mapcode-cpp"]
+	path = src/mapcode-cpp
+	url = git@github.com:mapcode-foundation/mapcode-cpp.git
